@@ -223,7 +223,7 @@ function HomePage() {
 
 function ServicesSection() {
   return (
-    <section id="services" className="section-pad circuit-panel">
+    <section id="services" className="section-pad section-band section-services">
       <div className="container-x relative">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1fr] lg:items-center">
           <SectionHeading eyebrow="Services / Solutions" title="Solutions Built for" accent="Growth." />
@@ -258,7 +258,7 @@ function ServicesSection() {
 
 function PortfolioPage() {
   return (
-    <section id="portfolio" className="section-pad pt-36 sm:pt-40">
+    <section id="portfolio" className="section-pad section-band section-portfolio pt-36 sm:pt-40">
       <div className="container-x">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading eyebrow="Our Work. Real Results." title="Featured" accent="Work">
@@ -282,7 +282,7 @@ function PortfolioPage() {
 
 function ProcessPage() {
   return (
-    <section id="process" className="section-pad circuit-panel pt-36 sm:pt-40">
+    <section id="process" className="section-pad section-band section-process pt-36 sm:pt-40">
       <div className="container-x relative">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1fr] lg:items-center">
           <SectionHeading eyebrow="Our Process" title="How We Work. Built for" accent="Results." />
@@ -354,7 +354,7 @@ function ProcessPage() {
 
 function AboutPage() {
   return (
-    <section id="about" className="section-pad pt-36 sm:pt-40">
+    <section id="about" className="section-pad section-band section-about pt-36 sm:pt-40">
       <div className="container-x">
         <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div>
@@ -406,7 +406,7 @@ function AboutPage() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="pb-16 sm:pb-24">
+    <section id="contact" className="section-band section-contact py-16 sm:py-24">
       <div className="container-x">
         <div className="glass-card lime-border rounded-[1.75rem] p-6 sm:p-8 lg:p-12">
           <div className="grid gap-10 xl:grid-cols-[0.9fr_1fr_0.62fr] xl:divide-x xl:divide-lime/25">
