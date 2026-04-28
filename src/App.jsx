@@ -27,12 +27,12 @@ import Button from "./components/Button.jsx";
 import ContactForm from "./components/ContactForm.jsx";
 import Footer from "./components/Footer.jsx";
 import Header from "./components/Header.jsx";
-import HeroMockup from "./components/HeroMockup.jsx";
 import PortfolioCard from "./components/PortfolioCard.jsx";
 import ProcessCard from "./components/ProcessCard.jsx";
 import SectionHeading from "./components/SectionHeading.jsx";
 import ServiceCard from "./components/ServiceCard.jsx";
 import StatItem from "./components/StatItem.jsx";
+import heroBackground from "./assets/hero-background.png";
 
 const services = [
   {
@@ -169,9 +169,17 @@ const heroHighlights = [
 function HomePage() {
   return (
     <>
-      <section id="home" className="relative overflow-hidden pt-36 sm:pt-40 lg:min-h-screen">
-        <div className="container-x grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
-          <div>
+      <section id="home" className="relative isolate min-h-screen overflow-hidden pt-36 sm:pt-40">
+        <img
+          src={heroBackground}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-[62%_center] md:object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(3,7,10,0.98)_0%,rgba(3,7,10,0.88)_32%,rgba(3,7,10,0.46)_62%,rgba(3,7,10,0.18)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_28%,rgba(182,255,0,0.16),transparent_24%),linear-gradient(180deg,rgba(3,7,10,0.18)_0%,rgba(3,7,10,0.44)_70%,#03070A_100%)]" />
+        <div className="container-x relative grid min-h-[calc(100vh-9rem)] items-center pb-10">
+          <div className="max-w-4xl">
             <p className="eyebrow-line">Digital Creative Studio</p>
             <h1 className="mt-8 max-w-4xl font-display text-5xl font-bold leading-[0.98] text-bone sm:text-7xl lg:text-8xl">
               Your Business
@@ -190,11 +198,10 @@ function HomePage() {
               </Button>
             </div>
           </div>
-          <HeroMockup />
         </div>
 
-        <div className="container-x mt-14 pb-16 sm:mt-20">
-          <div className="grid gap-5 border-y border-lime/20 py-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="container-x relative pb-16">
+          <div className="glass-card grid gap-5 rounded-2xl border-lime/20 px-5 py-7 sm:grid-cols-2 sm:px-7 lg:grid-cols-4">
             {heroHighlights.map((item) => (
               <div key={item.title} className="flex gap-5 border-lime/35 lg:border-l lg:pl-8 lg:first:border-l-0 lg:first:pl-0">
                 <item.icon aria-hidden="true" className="h-12 w-12 shrink-0 text-lime stroke-[1.7]" />
