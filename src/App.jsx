@@ -1,6 +1,6 @@
 import {
-  BadgeCheck,
   ArrowRight,
+  BadgeCheck,
   BarChart3,
   Box,
   CalendarDays,
@@ -166,271 +166,320 @@ const heroHighlights = [
   { icon: Cpu, title: "AI Integration", text: "Intelligent. Automated. Future-Ready." },
 ];
 
-export default function App() {
+function HomePage() {
   return (
-    <div className="page-shell">
-      <Header />
-      <main>
-        <section id="home" className="relative overflow-hidden pt-36 sm:pt-40 lg:min-h-screen">
-          <div className="container-x grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
-            <div>
-              <p className="eyebrow-line">Digital Creative Studio</p>
-              <h1 className="mt-8 max-w-4xl font-display text-5xl font-bold leading-[0.98] text-bone sm:text-7xl lg:text-8xl">
-                Your Business
-                <span className="block">Has a Vision.</span>
-                <span className="block text-lime">We Build It Online.</span>
-              </h1>
-              <p className="mt-8 max-w-2xl text-lg leading-9 text-mist sm:text-xl">
-                We create modern websites, AI integration, custom print design, and online brand systems that help small businesses stand out, build trust, and grow with confidence.
-              </p>
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Button href="#contact" className="sm:min-w-64">
-                  Start Your Project
-                </Button>
-                <Button href="#services" variant="secondary" className="sm:min-w-56">
-                  View Services
-                </Button>
-              </div>
-            </div>
-            <HeroMockup />
-          </div>
-
-          <div className="container-x mt-14 pb-16 sm:mt-20">
-            <div className="grid gap-5 border-y border-lime/20 py-8 sm:grid-cols-2 lg:grid-cols-4">
-              {heroHighlights.map((item) => (
-                <div key={item.title} className="flex gap-5 border-lime/35 lg:border-l lg:pl-8 lg:first:border-l-0 lg:first:pl-0">
-                  <item.icon aria-hidden="true" className="h-12 w-12 shrink-0 text-lime stroke-[1.7]" />
-                  <div>
-                    <h2 className="font-display text-xl font-bold text-bone">{item.title}</h2>
-                    <p className="mt-2 text-sm text-mist">{item.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="services" className="section-pad circuit-panel">
-          <div className="container-x relative">
-            <div className="grid gap-10 lg:grid-cols-[0.9fr_1fr] lg:items-center">
-              <SectionHeading eyebrow="Services / Solutions" title="Solutions Built for" accent="Growth." />
-              <p className="max-w-2xl border-l border-lime/45 pl-8 text-lg leading-9 text-bone/88">
-                We help small businesses stand out, build trust, and grow with smart design and technology.
-              </p>
-            </div>
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-              {services.map((service) => (
-                <ServiceCard key={service.title} {...service} />
-              ))}
-            </div>
-
-            <div className="glass-card lime-border mt-10 flex flex-col gap-6 rounded-2xl p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
-              <div className="flex items-start gap-5">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-lime/50 text-lime">
-                  <Zap aria-hidden="true" className="h-6 w-6" />
-                </span>
-                <p className="max-w-4xl text-base leading-8 text-bone/85">
-                  From concept to launch and beyond, we deliver solutions that are strategic, <span className="text-lime">scalable</span>, and built for <span className="text-lime">long-term growth</span>.
-                </p>
-              </div>
-              <Button href="#contact" variant="secondary" className="shrink-0">
-                View All Services
+    <>
+      <section id="home" className="relative overflow-hidden pt-36 sm:pt-40 lg:min-h-screen">
+        <div className="container-x grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
+          <div>
+            <p className="eyebrow-line">Digital Creative Studio</p>
+            <h1 className="mt-8 max-w-4xl font-display text-5xl font-bold leading-[0.98] text-bone sm:text-7xl lg:text-8xl">
+              Your Business
+              <span className="block">Has a Vision.</span>
+              <span className="block text-lime">We Build It Online.</span>
+            </h1>
+            <p className="mt-8 max-w-2xl text-lg leading-9 text-mist sm:text-xl">
+              We create modern websites, AI integration, custom print design, and online brand systems that help small businesses stand out, build trust, and grow with confidence.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Button href="#contact" className="sm:min-w-64">
+                Start Your Project
+              </Button>
+              <Button href="#services" variant="secondary" className="sm:min-w-56">
+                View Services
               </Button>
             </div>
           </div>
-        </section>
+          <HeroMockup />
+        </div>
 
-        <section id="portfolio" className="section-pad">
-          <div className="container-x">
-            <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-              <SectionHeading eyebrow="Our Work. Real Results." title="Featured" accent="Work">
-                We partner with forward-thinking brands to design digital experiences, print materials, and systems that drive growth and leave a lasting impact.
-              </SectionHeading>
-              <a href="#contact" className="focus-ring inline-flex w-fit items-center gap-4 border-b border-lime pb-2 text-lg font-semibold text-bone hover:text-lime">
-                View All Projects
-                <ArrowRight aria-hidden="true" className="h-5 w-5" />
-              </a>
-            </div>
-
-            <div className="mt-12 grid gap-6 xl:grid-cols-3">
-              {portfolio.map((item) => (
-                <PortfolioCard key={item.title} {...item} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="process" className="section-pad circuit-panel">
-          <div className="container-x relative">
-            <div className="grid gap-10 lg:grid-cols-[0.95fr_1fr] lg:items-center">
-              <SectionHeading eyebrow="Our Process" title="How We Work. Built for" accent="Results." />
-              <p className="max-w-2xl text-lg leading-9 text-bone/88">
-                A clear, collaborative process that turns strategy into digital experiences designed to grow your brand and built to last.
-              </p>
-            </div>
-
-            <div className="mt-16 grid gap-6 xl:grid-cols-[1fr_320px]">
-              <div className="relative grid gap-9 pt-6 sm:grid-cols-2 lg:grid-cols-4">
-                <span className="absolute left-6 right-6 top-0 hidden h-px bg-lime/55 lg:block" />
-                {process.map((item) => (
-                  <ProcessCard key={item.title} {...item} />
-                ))}
-              </div>
-
-              <aside className="glass-card lime-border rounded-2xl p-7 shadow-glow">
-                <h3 className="font-display text-2xl font-bold text-lime">AI-Ready Workflows</h3>
-                <p className="mt-5 text-sm leading-7 text-bone/85">
-                  We integrate intelligent tools and automations that streamline operations, enhance customer experiences, and unlock growth.
-                </p>
-                <div className="mt-7 space-y-6 border-t border-white/15 pt-7">
-                  {[
-                    { icon: CircuitBoard, title: "AI Automation", text: "Smarter workflows that save time and reduce manual work." },
-                    { icon: BarChart3, title: "Data-Driven Insights", text: "Real-time data and AI insights to guide better decisions." },
-                    { icon: Puzzle, title: "Seamless Integrations", text: "Connect the tools you use and scale without friction." },
-                  ].map((item) => (
-                    <div key={item.title} className="flex gap-4">
-                      <item.icon aria-hidden="true" className="h-9 w-9 shrink-0 text-lime stroke-[1.6]" />
-                      <div>
-                        <h4 className="font-display text-lg font-bold text-bone">{item.title}</h4>
-                        <p className="mt-1 text-sm leading-6 text-mist">{item.text}</p>
-                      </div>
-                    </div>
-                  ))}
+        <div className="container-x mt-14 pb-16 sm:mt-20">
+          <div className="grid gap-5 border-y border-lime/20 py-8 sm:grid-cols-2 lg:grid-cols-4">
+            {heroHighlights.map((item) => (
+              <div key={item.title} className="flex gap-5 border-lime/35 lg:border-l lg:pl-8 lg:first:border-l-0 lg:first:pl-0">
+                <item.icon aria-hidden="true" className="h-12 w-12 shrink-0 text-lime stroke-[1.7]" />
+                <div>
+                  <h2 className="font-display text-xl font-bold text-bone">{item.title}</h2>
+                  <p className="mt-2 text-sm text-mist">{item.text}</p>
                 </div>
-                <Button href="#contact" variant="secondary" className="mt-8 w-full">
-                  Explore Integrations
-                </Button>
-              </aside>
-            </div>
-
-            <div className="mt-10 grid gap-6 lg:grid-cols-[1.25fr_1fr_1fr_1fr] lg:items-center">
-              <div className="glass-card flex gap-6 rounded-2xl p-6">
-                <Target aria-hidden="true" className="h-12 w-12 shrink-0 text-lime" />
-                <p className="text-xl font-semibold leading-8 text-bone">
-                  Strategy-led. Design-driven. Technology-powered.
-                  <span className="block text-lime">Every step focused on growing your business.</span>
-                </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ServicesSection />
+      <ContactSection />
+    </>
+  );
+}
+
+function ServicesSection() {
+  return (
+    <section id="services" className="section-pad circuit-panel">
+      <div className="container-x relative">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1fr] lg:items-center">
+          <SectionHeading eyebrow="Services / Solutions" title="Solutions Built for" accent="Growth." />
+          <p className="max-w-2xl border-l border-lime/45 pl-8 text-lg leading-9 text-bone/88">
+            We help small businesses stand out, build trust, and grow with smart design and technology.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          {services.map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </div>
+
+        <div className="glass-card lime-border mt-10 flex flex-col gap-6 rounded-2xl p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+          <div className="flex items-start gap-5">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-lime/50 text-lime">
+              <Zap aria-hidden="true" className="h-6 w-6" />
+            </span>
+            <p className="max-w-4xl text-base leading-8 text-bone/85">
+              From concept to launch and beyond, we deliver solutions that are strategic, <span className="text-lime">scalable</span>, and built for <span className="text-lime">long-term growth</span>.
+            </p>
+          </div>
+          <Button href="/#contact" variant="secondary" className="shrink-0">
+            View All Services
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PortfolioPage() {
+  return (
+    <section id="portfolio" className="section-pad pt-36 sm:pt-40">
+      <div className="container-x">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <SectionHeading eyebrow="Our Work. Real Results." title="Featured" accent="Work">
+            We partner with forward-thinking brands to design digital experiences, print materials, and systems that drive growth and leave a lasting impact.
+          </SectionHeading>
+          <a href="/#contact" className="focus-ring inline-flex w-fit items-center gap-4 border-b border-lime pb-2 text-lg font-semibold text-bone hover:text-lime">
+            Start a Project
+            <ArrowRight aria-hidden="true" className="h-5 w-5" />
+          </a>
+        </div>
+
+        <div className="mt-12 grid gap-6 xl:grid-cols-3">
+          {portfolio.map((item) => (
+            <PortfolioCard key={item.title} {...item} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProcessPage() {
+  return (
+    <section id="process" className="section-pad circuit-panel pt-36 sm:pt-40">
+      <div className="container-x relative">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1fr] lg:items-center">
+          <SectionHeading eyebrow="Our Process" title="How We Work. Built for" accent="Results." />
+          <p className="max-w-2xl text-lg leading-9 text-bone/88">
+            A clear, collaborative process that turns strategy into digital experiences designed to grow your brand and built to last.
+          </p>
+        </div>
+
+        <div className="mt-16 grid gap-6 xl:grid-cols-[1fr_320px]">
+          <div className="relative grid gap-9 pt-6 sm:grid-cols-2 lg:grid-cols-4">
+            <span className="absolute left-6 right-6 top-0 hidden h-px bg-lime/55 lg:block" />
+            {process.map((item) => (
+              <ProcessCard key={item.title} {...item} />
+            ))}
+          </div>
+
+          <aside className="glass-card lime-border rounded-2xl p-7 shadow-glow">
+            <h3 className="font-display text-2xl font-bold text-lime">AI-Ready Workflows</h3>
+            <p className="mt-5 text-sm leading-7 text-bone/85">
+              We integrate intelligent tools and automations that streamline operations, enhance customer experiences, and unlock growth.
+            </p>
+            <div className="mt-7 space-y-6 border-t border-white/15 pt-7">
               {[
-                { icon: ShieldCheck, title: "Transparent Process", text: "Clear communication at every step." },
-                { icon: Users, title: "Collaborative Teams", text: "Your vision. Our expertise. One team." },
-                { icon: Zap, title: "Future-Ready Solutions", text: "Built with performance, scalability, and AI in mind." },
+                { icon: CircuitBoard, title: "AI Automation", text: "Smarter workflows that save time and reduce manual work." },
+                { icon: BarChart3, title: "Data-Driven Insights", text: "Real-time data and AI insights to guide better decisions." },
+                { icon: Puzzle, title: "Seamless Integrations", text: "Connect the tools you use and scale without friction." },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4">
-                  <item.icon aria-hidden="true" className="h-10 w-10 shrink-0 text-lime" />
+                  <item.icon aria-hidden="true" className="h-9 w-9 shrink-0 text-lime stroke-[1.6]" />
                   <div>
-                    <h3 className="font-display text-lg font-bold text-bone">{item.title}</h3>
+                    <h4 className="font-display text-lg font-bold text-bone">{item.title}</h4>
                     <p className="mt-1 text-sm leading-6 text-mist">{item.text}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
+            <Button href="/#contact" variant="secondary" className="mt-8 w-full">
+              Explore Integrations
+            </Button>
+          </aside>
+        </div>
 
-        <section id="about" className="section-pad">
-          <div className="container-x">
-            <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.25fr_1fr_1fr_1fr] lg:items-center">
+          <div className="glass-card flex gap-6 rounded-2xl p-6">
+            <Target aria-hidden="true" className="h-12 w-12 shrink-0 text-lime" />
+            <p className="text-xl font-semibold leading-8 text-bone">
+              Strategy-led. Design-driven. Technology-powered.
+              <span className="block text-lime">Every step focused on growing your business.</span>
+            </p>
+          </div>
+          {[
+            { icon: ShieldCheck, title: "Transparent Process", text: "Clear communication at every step." },
+            { icon: Users, title: "Collaborative Teams", text: "Your vision. Our expertise. One team." },
+            { icon: Zap, title: "Future-Ready Solutions", text: "Built with performance, scalability, and AI in mind." },
+          ].map((item) => (
+            <div key={item.title} className="flex gap-4">
+              <item.icon aria-hidden="true" className="h-10 w-10 shrink-0 text-lime" />
               <div>
-                <SectionHeading eyebrow="About Vision Kreativa" title="We Design. We Build." accent="We Help You Grow." />
-                <p className="mt-7 text-base leading-8 text-mist sm:text-lg">
-                  Vision Kreativa is a digital creative studio dedicated to helping small businesses stand out and scale. We blend modern websites, custom print design, brand systems, and AI-powered solutions to build cohesive, high-impact experiences that drive real results.
+                <h3 className="font-display text-lg font-bold text-bone">{item.title}</h3>
+                <p className="mt-1 text-sm leading-6 text-mist">{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AboutPage() {
+  return (
+    <section id="about" className="section-pad pt-36 sm:pt-40">
+      <div className="container-x">
+        <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <div>
+            <SectionHeading eyebrow="About Vision Kreativa" title="We Design. We Build." accent="We Help You Grow." />
+            <p className="mt-7 text-base leading-8 text-mist sm:text-lg">
+              Vision Kreativa is a digital creative studio dedicated to helping small businesses stand out and scale. We blend modern websites, custom print design, brand systems, and AI-powered solutions to build cohesive, high-impact experiences that drive real results.
+            </p>
+            <div className="mt-8 grid gap-5">
+              {aboutFeatures.map((feature) => (
+                <div key={feature.title} className="flex gap-4">
+                  <feature.icon aria-hidden="true" className="mt-1 h-6 w-6 shrink-0 text-lime" />
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-bone">{feature.title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-mist">{feature.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-7">
+            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+              <StatItem value="120+" label="Projects Completed" icon={Box} />
+              <StatItem value="98%" label="Client Satisfaction" icon={BadgeCheck} />
+              <StatItem value="5+" label="Years Experience" icon={CalendarDays} />
+              <StatItem value="30+" label="Industries Served" icon={Rocket} />
+            </div>
+            <div className="glass-card circuit-panel rounded-2xl p-8 sm:p-10">
+              <div className="relative">
+                <p className="font-display text-6xl font-bold leading-none text-lime">&ldquo;</p>
+                <p className="max-w-3xl text-xl leading-9 text-bone">
+                  Vision Kreativa completely transformed our online presence. The new website looks incredible, works flawlessly, and our brand finally feels as professional as our service.
                 </p>
-                <div className="mt-8 grid gap-5">
-                  {aboutFeatures.map((feature) => (
-                    <div key={feature.title} className="flex gap-4">
-                      <feature.icon aria-hidden="true" className="mt-1 h-6 w-6 shrink-0 text-lime" />
-                      <div>
-                        <h3 className="font-display text-lg font-bold text-bone">{feature.title}</h3>
-                        <p className="mt-1 text-sm leading-6 text-mist">{feature.text}</p>
-                      </div>
-                    </div>
+                <div className="mt-8 flex text-lime" aria-label="Five star rating">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} aria-hidden="true" className="h-5 w-5 fill-current" />
                   ))}
                 </div>
-              </div>
-
-              <div className="grid gap-7">
-                <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-                  <StatItem value="120+" label="Projects Completed" icon={Box} />
-                  <StatItem value="98%" label="Client Satisfaction" icon={BadgeCheck} />
-                  <StatItem value="5+" label="Years Experience" icon={CalendarDays} />
-                  <StatItem value="30+" label="Industries Served" icon={Rocket} />
-                </div>
-                <div className="glass-card circuit-panel rounded-2xl p-8 sm:p-10">
-                  <div className="relative">
-                    <p className="font-display text-6xl font-bold leading-none text-lime">&ldquo;</p>
-                    <p className="max-w-3xl text-xl leading-9 text-bone">
-                      Vision Kreativa completely transformed our online presence. The new website looks incredible, works flawlessly, and our brand finally feels as professional as our service.
-                    </p>
-                    <div className="mt-8 flex text-lime" aria-label="Five star rating">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} aria-hidden="true" className="h-5 w-5 fill-current" />
-                      ))}
-                    </div>
-                    <p className="mt-6 font-display text-lg font-bold text-bone">Jessica M.</p>
-                    <p className="mt-1 text-sm text-mist">Founder, PureGlow Skincare</p>
-                  </div>
-                </div>
+                <p className="mt-6 font-display text-lg font-bold text-bone">Jessica M.</p>
+                <p className="mt-1 text-sm text-mist">Founder, PureGlow Skincare</p>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-        <section id="contact" className="pb-16 sm:pb-24">
-          <div className="container-x">
-            <div className="glass-card lime-border rounded-[1.75rem] p-6 sm:p-8 lg:p-12">
-              <div className="grid gap-10 xl:grid-cols-[0.9fr_1fr_0.62fr] xl:divide-x xl:divide-lime/25">
-                <div className="xl:pr-10">
-                  <p className="eyebrow-line">Let&apos;s Build Something Great</p>
-                  <h2 className="mt-7 font-display text-4xl font-bold leading-[1.08] text-bone sm:text-5xl">
-                    Ready to Bring Your Vision to Life?
-                    <span className="block text-lime">We&apos;re Ready When You Are.</span>
-                  </h2>
-                  <p className="mt-6 text-base leading-8 text-mist">
-                    From powerful websites to unforgettable brand experiences, we&apos;re here to help you grow with confidence.
+function ContactSection() {
+  return (
+    <section id="contact" className="pb-16 sm:pb-24">
+      <div className="container-x">
+        <div className="glass-card lime-border rounded-[1.75rem] p-6 sm:p-8 lg:p-12">
+          <div className="grid gap-10 xl:grid-cols-[0.9fr_1fr_0.62fr] xl:divide-x xl:divide-lime/25">
+            <div className="xl:pr-10">
+              <p className="eyebrow-line">Let&apos;s Build Something Great</p>
+              <h2 className="mt-7 font-display text-4xl font-bold leading-[1.08] text-bone sm:text-5xl">
+                Ready to Bring Your Vision to Life?
+                <span className="block text-lime">We&apos;re Ready When You Are.</span>
+              </h2>
+              <p className="mt-6 text-base leading-8 text-mist">
+                From powerful websites to unforgettable brand experiences, we&apos;re here to help you grow with confidence.
+              </p>
+              <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center">
+                <Button href="#contact">Start Your Project</Button>
+                <div className="flex items-center gap-4">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-lg border border-lime/45 text-lime">
+                    <CalendarDays aria-hidden="true" className="h-6 w-6" />
+                  </span>
+                  <p className="text-sm leading-6 text-mist">
+                    <span className="block font-bold text-bone">Book a Free Consultation</span>
+                    No pressure. Just possibilities.
                   </p>
-                  <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center">
-                    <Button href="#contact">Start Your Project</Button>
-                    <div className="flex items-center gap-4">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-lg border border-lime/45 text-lime">
-                        <CalendarDays aria-hidden="true" className="h-6 w-6" />
-                      </span>
-                      <p className="text-sm leading-6 text-mist">
-                        <span className="block font-bold text-bone">Book a Free Consultation</span>
-                        No pressure. Just possibilities.
-                      </p>
-                    </div>
-                  </div>
                 </div>
-
-                <div className="xl:px-10">
-                  <p className="eyebrow-line">Send Us a Message</p>
-                  <div className="mt-6">
-                    <ContactForm />
-                  </div>
-                </div>
-
-                <aside className="space-y-6 xl:pl-10">
-                  {[
-                    { icon: Mail, title: "Email Us", text: "hello@visionkreativa.com" },
-                    { icon: Phone, title: "Call Us", text: "(555) 123-4567" },
-                    { icon: MapPin, title: "Our Studio", text: "Digital-first studio" },
-                    { icon: CalendarDays, title: "Hours", text: "Mon - Fri: 9AM - 6PM EST" },
-                  ].map((item) => (
-                    <div key={item.title} className="flex gap-4 border-b border-white/10 pb-6 last:border-b-0">
-                      <item.icon aria-hidden="true" className="h-7 w-7 shrink-0 text-lime" />
-                      <div>
-                        <h3 className="font-display text-base font-bold text-bone">{item.title}</h3>
-                        <p className="mt-1 text-sm leading-6 text-mist">{item.text}</p>
-                      </div>
-                    </div>
-                  ))}
-                </aside>
               </div>
             </div>
+
+            <div className="xl:px-10">
+              <p className="eyebrow-line">Send Us a Message</p>
+              <div className="mt-6">
+                <ContactForm />
+              </div>
+            </div>
+
+            <aside className="space-y-6 xl:pl-10">
+              {[
+                { icon: Mail, title: "Email Us", text: "hello@visionkreativa.com" },
+                { icon: Phone, title: "Call Us", text: "(555) 123-4567" },
+                { icon: MapPin, title: "Our Studio", text: "Digital-first studio" },
+                { icon: CalendarDays, title: "Hours", text: "Mon - Fri: 9AM - 6PM EST" },
+              ].map((item) => (
+                <div key={item.title} className="flex gap-4 border-b border-white/10 pb-6 last:border-b-0">
+                  <item.icon aria-hidden="true" className="h-7 w-7 shrink-0 text-lime" />
+                  <div>
+                    <h3 className="font-display text-base font-bold text-bone">{item.title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-mist">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </aside>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CurrentPage() {
+  const path = window.location.pathname;
+
+  if (path === "/portfolio") {
+    return <PortfolioPage />;
+  }
+
+  if (path === "/process") {
+    return <ProcessPage />;
+  }
+
+  if (path === "/about") {
+    return <AboutPage />;
+  }
+
+  return <HomePage />;
+}
+
+export default function App() {
+  return (
+    <div className="page-shell">
+      <Header />
+      <main>
+        <CurrentPage />
       </main>
       <Footer />
     </div>

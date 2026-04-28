@@ -126,7 +126,7 @@ export default function PortfolioCard({ title, category, description, stats, var
           ))}
         </div>
         <a
-          href="#contact"
+          href="/#contact"
           className="focus-ring mt-6 inline-flex items-center gap-4 rounded-md text-sm font-bold text-lime transition duration-300 group-hover:gap-5"
         >
           View Project

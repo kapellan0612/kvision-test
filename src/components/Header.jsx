@@ -4,11 +4,11 @@ import Button from "./Button.jsx";
 import logo from "../assets/vision-kreativa-logo.png";
 
 const navItems = [
-  { href: "#services", label: "Services" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#process", label: "Process" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#services", label: "Services" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/process", label: "Process" },
+  { href: "/about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-obsidian/78 backdrop-blur-xl">
       <div className="container-x flex min-h-24 items-center justify-between gap-6">
-        <a href="#home" aria-label="Vision Kreativa home" className="focus-ring block h-16 w-56 overflow-hidden rounded-md sm:w-72">
+        <a href="/" aria-label="Vision Kreativa home" className="focus-ring block h-16 w-56 overflow-hidden rounded-md sm:w-72">
           <img
             src={logo}
             alt="Vision Kreativa Digital Creative Studio"
@@ -39,7 +39,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="#contact" variant="secondary" className="min-w-56">
+          <Button href="/#contact" variant="secondary" className="min-w-56">
             Start Your Project
           </Button>
         </div>
@@ -68,7 +68,7 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
-            <Button href="#contact" className="mt-2 w-full" onClick={() => setOpen(false)}>
+            <Button href="/#contact" className="mt-2 w-full" onClick={() => setOpen(false)}>
               Start Your Project
             </Button>
           </nav>

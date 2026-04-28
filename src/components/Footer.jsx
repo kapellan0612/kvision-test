@@ -2,18 +2,18 @@ import { Instagram, Linkedin } from "lucide-react";
 import logo from "../assets/vision-kreativa-logo.png";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#process", label: "Process" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#services", label: "Services" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/process", label: "Process" },
+  { href: "/about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 py-10">
       <div className="container-x flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-        <a href="#home" aria-label="Vision Kreativa home" className="focus-ring block h-16 w-60 overflow-hidden rounded-md">
+        <a href="/" aria-label="Vision Kreativa home" className="focus-ring block h-16 w-60 overflow-hidden rounded-md">
           <img
             src={logo}
             alt="Vision Kreativa Digital Creative Studio"
