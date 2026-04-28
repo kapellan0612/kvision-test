@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #03070a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 7.5rem;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    linear-gradient(135deg, rgba(6, 19, 13, 0.9), rgba(2, 4, 3, 0.96) 36%, #03070a 100%),
+    #03070a;
+  color: #f5f7f2;
+  font-family: Inter, system-ui, sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+::selection {
+  background: rgba(182, 255, 0, 0.35);
+  color: #f5f7f2;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@layer base {
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply w-full rounded-lg border border-white/15 bg-white/[0.035] px-4 py-3 text-sm text-bone outline-none transition duration-300 placeholder:text-mist/65 focus:border-lime/75 focus:shadow-[0_0_0_3px_rgba(182,255,0,0.12)];
+  }
+
+  select {
+    @apply appearance-none;
+  }
+
+  textarea {
+    @apply min-h-32 resize-y;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply relative isolate overflow-hidden bg-obsidian;
+  }
+
+  .page-shell::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+      linear-gradient(115deg, rgba(182, 255, 0, 0.13), transparent 22%),
+      linear-gradient(295deg, rgba(182, 255, 0, 0.12), transparent 24%),
+      linear-gradient(180deg, rgba(0, 30, 45, 0.28), transparent 42%),
+      #03070a;
+  }
+
+  .page-shell::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.34;
+    background-image:
+      linear-gradient(rgba(182, 255, 0, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(182, 255, 0, 0.06) 1px, transparent 1px),
+      linear-gradient(135deg, transparent 0 44%, rgba(182, 255, 0, 0.1) 44% 45%, transparent 45% 100%);
+    background-size: 64px 64px, 64px 64px, 180px 180px;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 88%, transparent);
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .container-x {
+    @apply mx-auto w-full max-w-[1560px] px-5 sm:px-8 lg:px-14;
+  }
+
+  .glass-card {
+    @apply border border-white/15 bg-white/[0.04] shadow-card-glow backdrop-blur-xl;
+  }
+
+  .lime-border {
+    @apply border border-lime/30 hover:border-lime/70;
+  }
+
+  .eyebrow-line {
+    @apply inline-flex items-center gap-4 text-xs font-bold uppercase text-lime sm:text-sm;
+    letter-spacing: 0.28em;
+  }
+
+  .eyebrow-line::before {
+    content: "";
+    @apply h-px w-10 bg-lime sm:w-14;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .circuit-panel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .circuit-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.28;
+    background:
+      linear-gradient(90deg, rgba(182, 255, 0, 0.12) 1px, transparent 1px),
+      linear-gradient(rgba(182, 255, 0, 0.08) 1px, transparent 1px),
+      linear-gradient(135deg, transparent 0 48%, rgba(182, 255, 0, 0.12) 49%, transparent 50% 100%);
+    background-size: 78px 78px, 78px 78px, 240px 240px;
+    mask-image: linear-gradient(120deg, transparent 12%, black 55%, transparent 100%);
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime;
+  }
+}
